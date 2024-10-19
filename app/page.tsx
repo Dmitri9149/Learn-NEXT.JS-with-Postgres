@@ -15,11 +15,11 @@ export default function Page() {
             className={styles.shape}
           />
             <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-              <strong>Welcome to Select Breed Application.</strong> This is the example for the{' '}
+              <strong>Welcome to Select Breed.</strong> This is the example for the{' '}
               <a href="https://nextjs.org" className="text-blue-500">
                 Next.js technology
               </a>
-              , brought to you by Vercel.
+              , the application helps you to select the most suitable dog breed. 
             </p>
             <Link
               href="/login"
