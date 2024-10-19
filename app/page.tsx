@@ -17,11 +17,7 @@ export default function Page() {
             className={styles.shape}
           />
             <p className={` ${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-              <strong>Welcome to Select Breed.</strong> This is the example for the{' '}
-              <a href="https://nextjs.org" className="text-blue-500">
-                Next.js
-              </a>
-              , the application helps you to select the most suitable dog breed. 
+              <strong>Welcome to Select Breed.</strong> The application helps you to select dog breed. 
             </p>
             <Link
               href="/login"
