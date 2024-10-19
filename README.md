@@ -1,0 +1,1 @@
+The dog picture was taken from: https://www.freepik.com/free-vector/hand-drawn-golden-retriever-silhouette_158856301.htm#fromView=keyword&page=1&position=1&uuid=c2bfcc9c-9526-483f-a8ad-58f563dd3b8e
