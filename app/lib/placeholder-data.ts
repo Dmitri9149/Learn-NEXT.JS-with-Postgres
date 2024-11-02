@@ -15,36 +15,36 @@ const breeds = [
   {
     id: 'd6e15727-9fe1-4961-8c5b-ea44a9bd81aa',
     name: 'American Bulldog',
-    image_url: '/customers/evil-rabbit.png',
+    image_url: '/customers/evil-rabbit.png'
   },
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
     name: 'Airedale Terrier',
-    image_url: '/customers/delba-de-oliveira.png',
+    image_url: '/customers/delba-de-oliveira.png'
   },
   {
     id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
     name: 'Labrador Retriever',
-    image_url: '/customers/lee-robinson.png',
+    image_url: '/customers/lee-robinson.png'
   },
   {
     id: '76d65c26-f784-44a2-ac19-586678f7c2f2',
     name: 'Chinook',
-    image_url: '/customers/michael-novotny.png',
+    image_url: '/customers/michael-novotny.png'
   },
   {
     id: 'CC27C14A-0ACF-4F4A-A6C9-D45682C144B9',
     name: 'Chow Chow',
-    image_url: '/customers/amy-burns.png',
+    image_url: '/customers/amy-burns.png'
   },
   {
     id: '13D07535-C59E-4157-A011-F8D2EF4E0CBB',
     name: 'Bolognese',
-    image_url: '/customers/balazs-orban.png',
-  },
+    image_url: '/customers/balazs-orban.png'
+  }
 ];
 
-const traits = [
+const f_traits = [
   {
     breed_id: breeds[0].id,
     affectionate_with_family: 0,
@@ -60,7 +60,7 @@ const traits = [
     trainability_level: 4,
     energy_level: 0,
     barking_level: 1,
-    mental_stimulation_needs: 0,
+    mental_stimulation_needs: 0
   },
   {
     breed_id: breeds[1].id,
@@ -77,7 +77,7 @@ const traits = [
     trainability_level: 3,
     energy_level: 3,
     barking_level: 3,
-    mental_stimulation_needs: 3,
+    mental_stimulation_needs: 3
   },
   {
     breed_id: breeds[2].id,
@@ -94,7 +94,7 @@ const traits = [
     trainability_level: 5,
     energy_level: 5,
     barking_level: 3,
-    mental_stimulation_needs: 4,
+    mental_stimulation_needs: 4
   },
   {
     breed_id: breeds[3].id,
@@ -111,7 +111,7 @@ const traits = [
     trainability_level: 4,
     energy_level: 3,
     barking_level: 5,
-    mental_stimulation_needs: 3,
+    mental_stimulation_needs: 3
   },
   {
     breed_id: breeds[4].id,
@@ -128,7 +128,7 @@ const traits = [
     trainability_level: 3,
     energy_level: 3,
     barking_level: 1,
-    mental_stimulation_needs: 3,
+    mental_stimulation_needs: 3
   },
   {
     breed_id: breeds[5].id,
@@ -145,8 +145,38 @@ const traits = [
     trainability_level: 5,
     energy_level: 1,
     barking_level: 1,
-    mental_stimulation_needs: 1,
-  },
+    mental_stimulation_needs: 1
+  }
 ];
 
-export { app_users, breeds, traits };
+const ff_traits = [
+  {
+    breed_id: breeds[0].id,
+    affectionate_with_family: 0
+  },
+  {
+    breed_id: breeds[1].id,
+    affectionate_with_family: 3
+  },
+  {
+    breed_id: breeds[2].id,
+    affectionate_with_family: 5
+  },
+  {
+    breed_id: breeds[3].id,
+    affectionate_with_family: 4
+  },
+  {
+    breed_id: breeds[4].id,
+    affectionate_with_family: 4
+  },
+  {
+    breed_id: breeds[5].id,
+    affectionate_with_family: 3
+  }
+];
+
+
+
+
+export { app_users, breeds, ff_traits, f_traits };
