@@ -1,7 +1,7 @@
 The application is for learning Next.JS , Vercel, Postgres.
-The app helps to select dog breed and is used for demonstration purposes only. 
+The app helps to select dog breed and is used for demonstration purposes only.
 
-For demonstration purposes I use the breed features as in the   
+For demonstration purposes I use some breed features as in the   
 [American Kennel Club](https://www.akc.org/)
 
 
