@@ -1,5 +1,3 @@
-// This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
-// https://nextjs.org/learn/dashboard-app/fetching-data
 const app_users = [
   {
     id: '410544b2-4001-4271-9855-fec4b6a6442a',
@@ -44,7 +42,7 @@ const breeds = [
   }
 ];
 
-const f_traits = [
+const traits = [
   {
     breed_id: breeds[0].id,
     affectionate_with_family: 0,
@@ -149,34 +147,4 @@ const f_traits = [
   }
 ];
 
-const ff_traits = [
-  {
-    breed_id: breeds[0].id,
-    affectionate_with_family: 0
-  },
-  {
-    breed_id: breeds[1].id,
-    affectionate_with_family: 3
-  },
-  {
-    breed_id: breeds[2].id,
-    affectionate_with_family: 5
-  },
-  {
-    breed_id: breeds[3].id,
-    affectionate_with_family: 4
-  },
-  {
-    breed_id: breeds[4].id,
-    affectionate_with_family: 4
-  },
-  {
-    breed_id: breeds[5].id,
-    affectionate_with_family: 3
-  }
-];
-
-
-
-
-export { app_users, breeds, ff_traits, f_traits };
+export { app_users, breeds, traits };
