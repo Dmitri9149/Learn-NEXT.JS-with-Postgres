@@ -188,8 +188,6 @@ const traits = [
     energy_level: 0,
     barking_level: 1,
     mental_stimulation_needs: 0,
-    status: 'pending',
-    date: '2022-12-06',
   },
   {
     breed_id: breeds[1].id,
@@ -207,8 +205,6 @@ const traits = [
     energy_level: 3,
     barking_level: 3,
     mental_stimulation_needs: 3,
-    status: 'pending',
-    date: '2022-11-14',
   },
   {
     breed_id: breeds[2].id,
@@ -226,8 +222,6 @@ const traits = [
     energy_level: 5,
     barking_level: 3,
     mental_stimulation_needs: 4,
-    status: 'paid',
-    date: '2022-10-29',
   },
   {
     breed_id: breeds[3].id,
@@ -245,8 +239,6 @@ const traits = [
     energy_level: 3,
     barking_level: 5,
     mental_stimulation_needs: 3,
-    status: 'paid',
-    date: '2023-09-10',
   },
   {
     breed_id: breeds[4].id,
@@ -264,8 +256,6 @@ const traits = [
     energy_level: 3,
     barking_level: 1,
     mental_stimulation_needs: 3,
-    status: 'pending',
-    date: '2023-08-05',
   },
   {
     breed_id: breeds[5].id,
@@ -283,8 +273,6 @@ const traits = [
     energy_level: 1,
     barking_level: 1,
     mental_stimulation_needs: 1,
-    status: 'pending',
-    date: '2023-07-16',
   },
 ];
 
