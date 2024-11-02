@@ -6,6 +6,8 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   Revenue,
+// ----------------------
+  BreedField
 } from './definitions';
 import { formatCurrency } from './utils';
 
@@ -213,5 +215,23 @@ export async function fetchFilteredCustomers(query: string) {
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch customer table.');
+  }
+}
+
+export async function fetchBreeds() {
+  try {
+    const data = await sql<BreedField>`
+      SELECT
+        id,
+        name
+      FROM customers
+      ORDER BY name ASC
+    `;
+
+    const customers = data.rows;
+    return customers;
+  } catch (err) {
+    console.error('Database Error:', err);
+    throw new Error('Failed to fetch all customers.');
   }
 }

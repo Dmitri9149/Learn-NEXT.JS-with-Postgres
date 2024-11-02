@@ -90,6 +90,11 @@ export type InvoiceForm = {
 
 // -------------
 
+export type BreedField = {
+  id: string;
+  name: string;
+};
+
 export type Breed = {
   id: string;
   name: string;
