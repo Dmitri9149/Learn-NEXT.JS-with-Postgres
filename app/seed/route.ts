@@ -1,122 +1,146 @@
-// import bcrypt from 'bcrypt';
-// import { db } from '@vercel/postgres';
-// import { invoices, customers, revenue, users } from '../lib/placeholder-data';
+ import bcrypt from 'bcrypt';
+ import { db } from '@vercel/postgres';
+ import { traits, breeds, app_users } from '../lib/placeholder-data';
 
-// const client = await db.connect();
+ const client = await db.connect();
 
-// async function seedUsers() {
-//   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-//   await client.sql`
-//     CREATE TABLE IF NOT EXISTS users (
-//       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-//       name VARCHAR(255) NOT NULL,
-//       email TEXT NOT NULL UNIQUE,
-//       password TEXT NOT NULL
-//     );
-//   `;
+ async function seedAppUsers() {
+   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+   await client.sql`
+     CREATE TABLE IF NOT EXISTS app_users (
+       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+       name VARCHAR(255) NOT NULL,
+       email TEXT NOT NULL UNIQUE,
+       password TEXT NOT NULL
+     );
+   `;
 
-//   const insertedUsers = await Promise.all(
-//     users.map(async (user) => {
-//       const hashedPassword = await bcrypt.hash(user.password, 10);
-//       return client.sql`
-//         INSERT INTO users (id, name, email, password)
-//         VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
-//         ON CONFLICT (id) DO NOTHING;
-//       `;
-//     }),
-//   );
+   const insertedAppUsers = await Promise.all(
+     app_users.map(async (app_user) => {
+       const hashedPassword = await bcrypt.hash(app_user.password, 10);
+       return client.sql`
+         INSERT INTO app_users (id, name, email, password)
+         VALUES (${app_user.id}, ${app_user.name}, ${app_user.email}, ${hashedPassword})
+         ON CONFLICT (id) DO NOTHING;
+       `;
+     }),
+   );
 
-//   return insertedUsers;
-// }
+   return insertedAppUsers;
+ }
 
-// async function seedInvoices() {
-//   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
-//   await client.sql`
-//     CREATE TABLE IF NOT EXISTS invoices (
-//       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-//       customer_id UUID NOT NULL,
-//       amount INT NOT NULL,
-//       status VARCHAR(255) NOT NULL,
-//       date DATE NOT NULL
-//     );
-//   `;
+ async function seedTraits() {
+   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
-//   const insertedInvoices = await Promise.all(
-//     invoices.map(
-//       (invoice) => client.sql`
-//         INSERT INTO invoices (customer_id, amount, status, date)
-//         VALUES (${invoice.customer_id}, ${invoice.amount}, ${invoice.status}, ${invoice.date})
-//         ON CONFLICT (id) DO NOTHING;
-//       `,
-//     ),
-//   );
+   await client.sql`
+     CREATE TABLE IF NOT EXISTS traits (
+        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+        breed_id UUID NOT NULL,
+        affectionate_with_family INT NOT NULL,  
+        good_with_other_dogs INT NOT NULL,
+        good_with_young_children INT NOT NULL,
+        shedding_level INT NOT NULL,
+        coat_grooming_frequency INT NOT NULL,
+        drooling_level INT NOT NULL,
+        openness_to_strangers INT NOT NULL,
+        playfulness_level INT NOT NULL,
+        watchdog_protective_nature INT NOT NULL,
+        adaptability_level INT NOT NULL,
+        trainability_level INT NOT NULL,
+        energy_level INT NOT NULL,
+        barking_level INT NOT NULL,
+        mental_stimulation_needs INT NOT NULL
+     );
+   `;
 
-//   return insertedInvoices;
-// }
+   const insertedTraits = await Promise.all(
+     traits.map(
+       (trait) => client.sql`
+         INSERT INTO traits (
+          breed_id,
+          affectionate_with_family,  
+          good_with_other_dogs,
+          good_with_young_children,
+          shedding_level,
+          coat_grooming_frequency,
+          drooling_level, 
+          openness_to_strangers,
+          playfulness_level,
+          watchdog_protective_nature,
+          adaptability_level,
+          trainability_level,
+          energy_level,
+          barking_level,
+          mental_stimulation_needs, 
+         )
+         VALUES (${trait.breed_id}, 
+          ${trait.affectionate_with_family}, 
+          ${trait.good_with_other_dogs},
+          ${trait.good_with_young_children},
+          ${trait.shedding_level}, 
+          ${trait.coat_grooming_frequency},
+          ${trait.drooling_level},
+          ${trait.openness_to_strangers}, 
+          ${trait.playfulness_level},
+          ${trait.watchdog_protective_nature},
+          ${trait.adaptability_level}, 
+          ${trait.trainability_level},
+          ${trait.energy_level},
+          ${trait.barking_level},
+          ${trait.mental_stimulation_needs},
 
-// async function seedCustomers() {
-//   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+          )
+         ON CONFLICT (id) DO NOTHING;
+       `,
+     ),
+   );
 
-//   await client.sql`
-//     CREATE TABLE IF NOT EXISTS customers (
-//       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-//       name VARCHAR(255) NOT NULL,
-//       email VARCHAR(255) NOT NULL,
-//       image_url VARCHAR(255) NOT NULL
-//     );
-//   `;
+   return insertedTraits;
+ }
 
-//   const insertedCustomers = await Promise.all(
-//     customers.map(
-//       (customer) => client.sql`
-//         INSERT INTO customers (id, name, email, image_url)
-//         VALUES (${customer.id}, ${customer.name}, ${customer.email}, ${customer.image_url})
-//         ON CONFLICT (id) DO NOTHING;
-//       `,
-//     ),
-//   );
+ async function seedBreeds() {
+   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
-//   return insertedCustomers;
-// }
+   await client.sql`
+     CREATE TABLE IF NOT EXISTS breeds (
+       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+       name VARCHAR(255) NOT NULL,
+       image_url VARCHAR(255) NOT NULL
+     );
+   `;
 
-// async function seedRevenue() {
-//   await client.sql`
-//     CREATE TABLE IF NOT EXISTS revenue (
-//       month VARCHAR(4) NOT NULL UNIQUE,
-//       revenue INT NOT NULL
-//     );
-//   `;
+   const insertedBreeds = await Promise.all(
+     breeds.map(
+       (breed) => client.sql`
+         INSERT INTO breeds (id, name, image_url)
+         VALUES (${breed.id}, ${breed.name}, ${breed.image_url})
+         ON CONFLICT (id) DO NOTHING;
+       `,
+     ),
+   );
 
-//   const insertedRevenue = await Promise.all(
-//     revenue.map(
-//       (rev) => client.sql`
-//         INSERT INTO revenue (month, revenue)
-//         VALUES (${rev.month}, ${rev.revenue})
-//         ON CONFLICT (month) DO NOTHING;
-//       `,
-//     ),
-//   );
+   return insertedBreeds;
+ }
 
-//   return insertedRevenue;
-// }
 
 export async function GET() {
-  return Response.json({
-    message:
-      'Uncomment this file and remove this line. You can delete this file when you are finished.',
-  });
-  // try {
-  //   await client.sql`BEGIN`;
-  //   await seedUsers();
-  //   await seedCustomers();
-  //   await seedInvoices();
-  //   await seedRevenue();
-  //   await client.sql`COMMIT`;
+//  return Response.json({
+//    message:
+//      'Uncomment this file and remove this line. You can delete this file when you are finished.',
+//  });
+   try {
+     await client.sql`BEGIN`;
+     await seedAppUsers();
+     await seedBreeds();
+     await seedTraits();
+     await client.sql`COMMIT`;
 
-  //   return Response.json({ message: 'Database seeded successfully' });
-  // } catch (error) {
-  //   await client.sql`ROLLBACK`;
-  //   return Response.json({ error }, { status: 500 });
-  // }
+     return Response.json({ message: 'Database seeded successfully' });
+   } catch (error) {
+     await client.sql`ROLLBACK`;
+     return Response.json({ error }, { status: 500 });
+   }
 }
+
+

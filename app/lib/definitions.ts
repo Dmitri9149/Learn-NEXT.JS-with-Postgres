@@ -93,12 +93,10 @@ export type InvoiceForm = {
 export type Breed = {
   id: string;
   name: string;
-  email: string;
   image_url: string;
 };
 
 export type Trait = {
-  id: string;
   breed_id: string;
   affectionate_with_family: number,
   good_with_other_dogs: number,
@@ -114,8 +112,4 @@ export type Trait = {
   energy_level: number,
   barking_level: number,
   mental_stimulation_needs: number,
-  date: string;
-  // In TypeScript, this is called a string union type.
-  // It means that the "status" property can only be one of the two strings: 'pending' or 'paid'.
-  status: 'pending' | 'paid';
 };
