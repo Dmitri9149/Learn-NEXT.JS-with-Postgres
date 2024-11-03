@@ -1,6 +1,8 @@
 The application is for learning Next.JS , Vercel, Postgres.   
 
-The app helps to select dog breed.
+The app helps to select dog breed.   
+
+Work is in progress.    
 
 At the moment only the ```dashboard``` path is working, something like:   
 ```
