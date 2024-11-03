@@ -1,5 +1,14 @@
-The application is for learning Next.JS , Vercel, Postgres.
+The application is for learning Next.JS , Vercel, Postgres.   
+
 The app helps to select dog breed.
+
+At the moment only the ```dashboard``` path is working, something like:   
+```
+localhost:3000/dashboard
+```
+
+The starter code is from here:   
+[course curriculum](https://nextjs.org/learn)
 
 For demonstration purposes I use some dog breed features as in the   
 [American Kennel Club](https://www.akc.org/)
