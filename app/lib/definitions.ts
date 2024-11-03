@@ -95,6 +95,17 @@ export type BreedField = {
   name: string;
 };
 
+
+export type  TraitsRecord = {
+  id: string;
+  name: string;
+  image_url: string;
+  affectionate_with_family: number,
+  good_with_other_dogs: number,
+  good_with_young_children: number,
+  shedding_level: number
+};
+
 export type Breed = {
   id: string;
   name: string;

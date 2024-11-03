@@ -7,7 +7,8 @@ import {
   LatestInvoiceRaw,
   Revenue,
 // ----------------------
-  BreedField
+  BreedField,
+  TraitsRecord
 } from './definitions';
 import { formatCurrency } from './utils';
 
@@ -236,3 +237,47 @@ export async function fetchBreeds() {
     throw new Error('Failed to fetch all breeds.');
   }
 }
+
+export async function fetchTraits() {
+  try {
+    const data = await sql<TraitsRecord>`
+    SELECT 
+      traits.affectionate_with_family,
+      traits.good_with_other_dogs,
+      traits.good_with_young_children,
+      traits.shedding_level, 
+      breeds.name, 
+      breeds.image_url
+      FROM traits
+      JOIN breeds ON traits.breed_id = breeds.id
+    `;
+    const  traits = data.rows;
+    return traits;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch the traits.');
+  }
+}
+
+/*
+const data = await sql<TraitsRecord>`
+  SELECT 
+    traits.affectionate_with_family,
+    traits.good_with_other_dogs,
+    traits.good_with_young_children,
+    traits.shedding_level,
+    traits.coat_grooming_frequency,
+    traits.drooling_level,
+    traits.openness_to_strangers,
+    traits.playfulness_level,
+    traits.watchdog_protective_nature,
+    traits.adaptability_level,
+    traits.trainability_level,
+    traits.energy_level,
+    traits.barking_level,
+    traits.mental_stimulation_needs 
+    breeds.name, 
+    breeds.image_url
+    FROM traits
+    JOIN breeds ON traits.breed_id = breeds.id`;
+*/
