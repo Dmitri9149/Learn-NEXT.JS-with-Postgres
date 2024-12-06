@@ -3,6 +3,7 @@ import RevenueChart from '@/app/ui/dashboard/revenue-chart';
 import {Traits, Scroll}  from '@/app/ui/dashboard/traits';
 import { lusitana } from '@/app/ui/fonts';
 import { fetchTraits } from '@/app/lib/data';
+import styles from '@/app/ui/home.module.css';
  
 export default async function Page() {
   const traits = await fetchTraits();
@@ -12,7 +13,8 @@ export default async function Page() {
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
         Dashboard
       </h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className={styles.shape}>
+        {/*      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"> */}
         {/* <Card title="Collected" value={totalPaidInvoices} type="collected" /> */}
         {/* <Card title="Pending" value={totalPendingInvoices} type="pending" /> */}
         {/* <Card title="Total Invoices" value={numberOfInvoices} type="invoices" /> */}
