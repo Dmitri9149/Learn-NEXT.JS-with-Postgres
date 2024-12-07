@@ -259,6 +259,23 @@ export async function fetchTraits() {
   }
 }
 
+export async function fetchBreedsQuantity() {
+  try {
+    const data = await sql<BreedField>`
+      SELECT
+        id,
+        name
+      FROM breeds
+      ORDER BY name ASC
+    `;
+    const breeds = data.rows;
+    return breeds.length;
+  } catch (err) {
+    console.error('Database Error:', err);
+    throw new Error('Failed to fetch all breeds.');
+  }
+}
+
 /*
 const data = await sql<TraitsRecord>`
   SELECT 
@@ -281,3 +298,4 @@ const data = await sql<TraitsRecord>`
     FROM traits
     JOIN breeds ON traits.breed_id = breeds.id`;
 */
+
