@@ -14,8 +14,8 @@ localhost:3000/dashboard/customers
 The starter code is from here:   
 [course curriculum](https://nextjs.org/learn)
 
-For demonstration purposes I use breed features as in the   
-[American Kennel Club](https://www.akc.org/) and several (8) breed/traits records from the [American Kennel Club](https://www.akc.org/) 
+For demonstration purposes I use dog breed features (traits) as in the   
+[American Kennel Club](https://www.akc.org/) and several (6) breed/traits records from the [American Kennel Club](https://www.akc.org/)   
 
 
 The dog picture was taken from: https://www.freepik.com/free-vector/hand-drawn-golden-retriever-silhouette_158856301.htm#fromView=keyword&page=1&position=1&uuid=c2bfcc9c-9526-483f-a8ad-58f563dd3b8e
