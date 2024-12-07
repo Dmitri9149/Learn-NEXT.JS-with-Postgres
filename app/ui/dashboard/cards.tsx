@@ -10,7 +10,7 @@ const iconMap = {
   collected: BanknotesIcon,
   customers: UserGroupIcon,
   pending: ClockIcon,
-  invoices: InboxIcon,
+  breeds: InboxIcon,
 };
 
 export default async function CardWrapper() {
@@ -37,7 +37,7 @@ export function Card({
 }: {
   title: string;
   value: number | string;
-  type: 'invoices' | 'customers' | 'pending' | 'collected';
+  type: 'breeds' | 'customers' | 'pending' | 'collected';
 }) {
   const Icon = iconMap[type];
 
