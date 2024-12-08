@@ -104,7 +104,16 @@ export type  TraitsRecord = {
   good_with_other_dogs: number,
   good_with_young_children: number,
   shedding_level: number,
-  coat_grooming_frequency: number
+  coat_grooming_frequency: number,
+  drooling_level: number,
+  openness_to_strangers: number,
+  playfulness_level: number,
+  watchdog_protective_nature: number,
+  adaptability_level: number,
+  trainability_level: number,
+  energy_level: number,
+  barking_level: number,
+  mental_stimulation_needs: number 
 };
 
 export type Breed = {

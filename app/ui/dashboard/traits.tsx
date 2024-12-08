@@ -66,7 +66,14 @@ export async function Traits({
                   >
                     { Scroll (trait.coat_grooming_frequency)}
                   </div>
-                  {traitRecord(trait.coat_grooming_frequency, "coat grooming frequency")}
+                  {traitRecord(trait.openness_to_strangers, "opennes to strangers")}
+                  {traitRecord(trait.playfulness_level, "playfullness level")}
+                  {traitRecord(trait.watchdog_protective_nature, "watchdog protective nature")}
+                  {traitRecord(trait.adaptability_level, "adaptability level")}
+                  {traitRecord(trait.trainability_level, "trainability level")}
+                  {traitRecord(trait.energy_level, "energy level")}
+                  {traitRecord(trait.barking_level, "barking level")}
+                  {traitRecord(trait.mental_stimulation_needs, "mental stimulations needs")}
                 </div>
               </div>
             );

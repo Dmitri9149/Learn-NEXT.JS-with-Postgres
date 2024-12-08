@@ -246,7 +246,16 @@ export async function fetchTraits() {
       traits.good_with_other_dogs,
       traits.good_with_young_children,
       traits.shedding_level,
-      traits.coat_grooming_frequency, 
+      traits.coat_grooming_frequency,
+      traits.drooling_level,
+      traits.openness_to_strangers,
+      traits.playfulness_level,
+      traits.watchdog_protective_nature,
+      traits.adaptability_level,
+      traits.trainability_level,
+      traits.energy_level,
+      traits.barking_level,
+      traits.mental_stimulation_needs,  
       breeds.name, 
       breeds.image_url
       FROM traits
