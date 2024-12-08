@@ -60,6 +60,13 @@ export async function Traits({
                   >
                     { Scroll (trait.good_with_young_children)}
                   </div>
+                  <div className='font-semibold'>coat grooming frequency</div>
+                  <div
+                    className={`${lusitana.className} flex text-sm font-medium md:text-base`}
+                  >
+                    { Scroll (trait.coat_grooming_frequency)}
+                  </div>
+                  {traitRecord(trait.coat_grooming_frequency, "coat grooming frequency")}
                 </div>
               </div>
             );
@@ -72,6 +79,19 @@ export async function Traits({
       </div>
     </div>
   );
+}
+
+function traitRecord (trait_rate: number, trait_description: string) {
+  return (
+    <>
+      <div className='font-semibold'>{trait_description}</div>
+      <div
+        className={`${lusitana.className} flex text-sm font-medium md:text-base`}
+      >
+        { Scroll (trait_rate)}
+      </div>
+    </>
+  )
 }
 
 export async function Scroll(x:number)  {
