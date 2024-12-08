@@ -103,7 +103,8 @@ export type  TraitsRecord = {
   affectionate_with_family: number,
   good_with_other_dogs: number,
   good_with_young_children: number,
-  shedding_level: number
+  shedding_level: number,
+  coat_grooming_frequency: number
 };
 
 export type Breed = {
