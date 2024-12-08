@@ -245,7 +245,8 @@ export async function fetchTraits() {
       traits.affectionate_with_family,
       traits.good_with_other_dogs,
       traits.good_with_young_children,
-      traits.shedding_level, 
+      traits.shedding_level,
+      traits.coat_grooming_frequency, 
       breeds.name, 
       breeds.image_url
       FROM traits
