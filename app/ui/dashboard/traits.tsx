@@ -14,7 +14,7 @@ export async function Traits({
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
         Breeds and Traits
       </h2>
-      <div className="flex grow flex-col justify-between rounded-xl bg-gray-50 p-4">
+      <div className="flex grow flex-col justify-between rounded-xl bg-grey-50 p-4">
         { <div className="bg-white px-6">
           {traits.map((trait, i) => {
             return (
@@ -26,7 +26,8 @@ export async function Traits({
                     'border-t': i !== 0,
                   },
                 )}
-              >
+              > 
+                <div className='border-indigo-100 border-solid border-2 flex'>
                 <div className="flex items-center">
                   <Image
                     src={trait.image_url}
@@ -74,6 +75,7 @@ export async function Traits({
                   {traitRecord(trait.energy_level, "energy level")}
                   {traitRecord(trait.barking_level, "barking level")}
                   {traitRecord(trait.mental_stimulation_needs, "mental stimulations needs")}
+                </div>
                 </div>
               </div>
             );
