@@ -261,15 +261,13 @@ export async function fetchTraits() {
 
 export async function fetchBreedsQuantity() {
   try {
-    const data = await sql<BreedField>`
-      SELECT
-        id,
-        name
-      FROM breeds
-      ORDER BY name ASC
-    `;
-    const breeds = data.rows;
-    return breeds.length;
+    const breedsQuantityPromise = sql`
+      SELECT COUNT(*) FROM breeds
+      `
+    const preBreedsQuantity = await breedsQuantityPromise;
+    console.log("preBreedsQuantity ==========> ", preBreedsQuantity);
+    const breedsQuantity = Number(preBreedsQuantity.rows[0].count ?? '0')
+    return breedsQuantity;
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch all breeds.');

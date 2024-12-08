@@ -13,7 +13,7 @@ export default async function Page() {
         Dashboard
       </h1>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <Card title="Total Breeds" value={breedsQuantity.toString()} type="breeds" />
+        <Card title="Total Breeds" value={breedsQuantity} type="breeds" />
         <Card
           title="Total Customers"
           value={1}
